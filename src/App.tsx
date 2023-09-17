@@ -1,5 +1,6 @@
 import Button from "./components/Button"
 import Container from "./components/Container"
+import Counter from "./components/Counter"
 import Header from "./components/Header"
 import Input from "./components/Input"
 import Name from "./components/Name"
@@ -7,6 +8,9 @@ import Oscar from "./components/Oscar"
 import Person from "./components/Person"
 import PersonList from "./components/PersonList"
 import Status from "./components/Status"
+import User from "./components/User"
+import AppCoponent from './components/AppCoponent';
+import Login from "./components/Login"
 
 const persons={
   firstName:'Sreeram',
@@ -28,7 +32,6 @@ const usersList=[
   {
     firstname:'thaval',
     lastname:'val',
-
   },
 ]
 
@@ -40,18 +43,28 @@ function App() {
   <Person name={persons}/>
   <PersonList names={usersList} />
   <Status status="loading" />
-  
+
   <Oscar>
   <Header>this children props</Header>
   </Oscar>
+
   <Button handleClick={(e,n)=>{
     console.log("button clicked",e,n)
   }}/>
+
   <Input text="val" handleChanges={(e)=>{
     console.log(e.target.value)
   }} />
 
   <Container styles={{width:"200px",height:"200px",backgroundColor:"yellow"}}/>
+
+  {/* HOCKS */}
+  {/* useState with as keay  */}
+  <User/>
+  {/* useReducer */}
+  <Counter/>
+  {/* another component in to the props */}
+  <AppCoponent isLogin={true} Component={Login}/>
   </>)
 }
 
