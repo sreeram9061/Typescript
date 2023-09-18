@@ -11,6 +11,8 @@ import Status from "./components/Status"
 import User from "./components/User"
 import AppCoponent from './components/AppCoponent';
 import Login from "./components/Login"
+import Generic from "./components/Generic"
+import RandomNumbers from "./components/RandomNumbers"
 
 const persons={
   firstName:'Sreeram',
@@ -65,6 +67,11 @@ function App() {
   <Counter/>
   {/* another component in to the props */}
   <AppCoponent isLogin={true} Component={Login}/>
+  {/* generic props */}
+  <Generic items={[{id:3,name:"sreera"},{id:4,name:"ram"}]} click={(val)=>{console.log(val)}} />
+  {/* props restricting */}
+  <RandomNumbers value={0} isNegative />   
+  
   </>)
 }
 
