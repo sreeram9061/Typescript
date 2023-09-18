@@ -19,6 +19,9 @@ type random=  | randomNumbersType & {
 
 
 const RandomNumbers = ({value,isPositive,isNegative,isZero}:random) => {
+
+
+
     
   return (
     <div>
